@@ -1,0 +1,32 @@
+version: "3"
+services:
+  app:
+    build: 
+      context: ./app
+      dockerfile: ./dockerfile
+#   command:
+    environment:
+      LANG: "ja_JP.UTF-8"
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "8000:8000"
+#    depends_on:
+#      - db
+#    links:
+#      - db
+#
+#  db:
+#    image:
+#    volumes:
+#     - ./db:/
+#     
+#  web:
+#    image:
+#    volumes:
+#     - ./web:/
+#    depends_on:
+#      - app
+#    links:
+#      - app
